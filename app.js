@@ -12,7 +12,7 @@ Ext.define('Books', {
 
   proxy: {
     type: 'ajax',
-    url: Configs.baseUrl + 'GetAllBooksServlet'
+    url: Configs.baseUrl + 'Books'
   }
 });
 
@@ -48,6 +48,11 @@ Ext.define('PopupForm', {
   modal: true,
 
   items: [{
+    xtype: 'numberfield',
+    name: 'id',
+    label: 'Id',
+    bind: '{book.id}'
+  }, {
     xtype: 'textfield',
     name: 'title',
     label: 'Title',
@@ -131,11 +136,35 @@ Ext.define('PopupFormController', {
 
   submitUpdate: function (me) {
     var view = this.getView(),
-      record = view.getRecord();
-    if (false) {
-      view.destroy();
-      record.commit();
-    }
+        record = view.getRecord();
+
+        success = function(msg) {
+          view.destroy();
+          record.commit();
+          Ext.Msg.alert('Status', 'Updated successfully!');
+        }
+
+        failure = function() {
+          Ext.Msg.alert('Status', 'Could not update!');
+        }
+
+    this.handleSubmit(record.data, success, failure);
+  },
+
+  handleSubmit: function(params, success, failure) {
+    Ext.Ajax.request({
+      url: Configs.baseUrl + 'Books',
+      method: 'PUT',
+      params: params,
+
+      success: function(response, opts) {
+        if (typeof success === 'function') success();
+      },
+ 
+      failure: function(response, opts) {
+        if (typeof failure === 'function') failure();
+      }
+  });
   }
 });
 
@@ -167,7 +196,6 @@ Ext.application({
           type: 'books',
           autoLoad: true,
           sorters: ['id', 'title', 'author', 'publisher', 'description', 'avalable', 'quantity', 'genre'],
-          // grouper: 'genre'
         },
         columns: [{
           text: 'ID',
