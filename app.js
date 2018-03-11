@@ -154,7 +154,7 @@ Ext.define('PopupFormController', {
   handleSubmit: function(params, success, failure) {
     Ext.Ajax.request({
       url: Configs.baseUrl + 'Books',
-      method: 'PUT',
+      methods: 'PUT',
       params: params,
 
       success: function(response, opts) {
