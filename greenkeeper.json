@@ -1,0 +1,45 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "ext/classic/classic/package.json",
+        "ext/classic/locale/package.json",
+        "ext/classic/theme-aria/package.json",
+        "ext/classic/theme-base/package.json",
+        "ext/classic/theme-classic-sandbox/package.json",
+        "ext/classic/theme-classic/package.json",
+        "ext/classic/theme-crisp-touch/package.json",
+        "ext/classic/theme-crisp/package.json",
+        "ext/classic/theme-gray/package.json",
+        "ext/classic/theme-neptune-touch/package.json",
+        "ext/classic/theme-neptune/package.json",
+        "ext/classic/theme-neutral/package.json",
+        "ext/classic/theme-triton/package.json",
+        "ext/classic/touch-sizing/package.json",
+        "ext/modern/modern/package.json",
+        "ext/modern/theme-base/package.json",
+        "ext/modern/theme-blackberry/package.json",
+        "ext/modern/theme-cupertino/package.json",
+        "ext/modern/theme-device-base/package.json",
+        "ext/modern/theme-ios/package.json",
+        "ext/modern/theme-material/package.json",
+        "ext/modern/theme-mountainview/package.json",
+        "ext/modern/theme-neptune/package.json",
+        "ext/modern/theme-triton/package.json",
+        "ext/modern/theme-windows/package.json",
+        "ext/package.json",
+        "ext/packages/amf/package.json",
+        "ext/packages/charts/package.json",
+        "ext/packages/core/package.json",
+        "ext/packages/font-awesome/package.json",
+        "ext/packages/font-ext/package.json",
+        "ext/packages/font-ios/package.json",
+        "ext/packages/font-pictos/package.json",
+        "ext/packages/google/package.json",
+        "ext/packages/legacy/package.json",
+        "ext/packages/soap/package.json",
+        "ext/packages/ux/package.json"
+      ]
+    }
+  }
+}
